@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 18:14:33 by jmbolana          #+#    #+#             */
-/*   Updated: 2025/11/03 18:33:20 by jmbolana         ###   ########.fr       */
+/*   Created: 2025/11/03 18:36:15 by jmbolana          #+#    #+#             */
+/*   Updated: 2025/11/03 18:37:57 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,13 @@
 
 void	ft_putnbr(int nb);
 
-void	ft_print_comb2(void);
-
-/*int	main(void)
-{
-	ft_print_comb2();
-	return (0);
-}
-*/
-void	ft_print_comb2(void)
-{
-	int	num[2];
-
-	num[0] = 0;
-	while (num[0] < 99)
-	{
-		num[1] = num[0] + 1;
-		while (num[1] < 100)
-		{
-			if (num[0] < 10)
-				write(1, "0", 1);
-			ft_putnbr(num[0]);
-			write(1, " ", 1);
-			if (num[1] < 10)
-				write(1, "0", 1);
-			ft_putnbr(num[1]);
-			if (num[0] < 98 || num[1] < 99)
-				write(1, ", ", 2);
-			num[1]++;
-		}
-		num[0]++;
-	}
-}
-
 void	ft_putnbr(int nb)
 {
 	char	*c;
 
 	c = "0123456789";
-	if (nb == -2147483647)
-		write(1, "-2147483647", 11);
+	if (nb == -2147483648)
+		write(1, "-2147483648", 11);
 	else
 	{
 		if (nb < 0)
